@@ -43,11 +43,7 @@ static void ajouterDsFilePrio (GrapheMat* graphe, Liste* file, int cout,int numS
 //Liste* ppv( GrapheMat* probleme,int* cout);
 void ppv(GrapheMat* probleme, char* retour[N], int a);
 void deuxOptv1(char* tour[N], int i , int j, char* retour[N]);
-<<<<<<< HEAD
 void deuxOptv2(GrapheMat* probleme,char* z[N],int y);
-=======
-void deuxOptv2(GrapheMat* probleme);
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 void escaladeS(GrapheMat* probleme);
 //void listToAr(Liste* li, char** l);
 int coutCircuit(GrapheMat* probleme,char* tour[N]);

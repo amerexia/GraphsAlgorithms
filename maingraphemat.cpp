@@ -153,7 +153,6 @@ int main () {
 	break;
 
     case 15:{
-<<<<<<< HEAD
     char* z[N];
     int i;
 	printf("------La liste des voisins------- \n");
@@ -164,12 +163,6 @@ int main () {
 		if(i<N-1) printf("->");
 		}
 	printf("Le cout optimal est %d\n",coutCircuit(graphe,z));
-	
-	
-=======
-	printf("------La liste des voisins------- \n");
-	deuxOptv2(graphe);
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 	}break;
 	
 	case 16:{

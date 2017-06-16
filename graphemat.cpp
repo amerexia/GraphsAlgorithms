@@ -178,11 +178,7 @@ static void rechprofondeur (GrapheMat* graphe, int numSommet, char but[] )
 }}
 void rechprofond (GrapheMat* graphe)
 {
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
     clock_t begin, end;
     double time_spent;
     razMarque (graphe);
@@ -206,15 +202,11 @@ void rechprofond (GrapheMat* graphe)
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("\nLe temps pris :  %f",time_spent);
-<<<<<<< HEAD
+
 
 }
 // recherche largeur
-=======
-   
-}
-// recherche largeur 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
+
  void largeur (GrapheMat* graphe, Liste* li, int numSommet,char but[])
 {
     int nMax = graphe->nMax;
@@ -420,11 +412,7 @@ printf("Chemin suivi par le parcous :   ");
     trouveS=false;
 }
 //cout uniforme
-<<<<<<< HEAD
 static void ajouterDsFilePrio (GrapheMat* graphe, Liste* file, int cout,int numSommet ,char * chemin,int but)
-=======
-static void ajouterDsFilePrio (GrapheMat* graphe, Liste* file, int cout,int numSommet ,char * chemin,int but) 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 {
 	// ajouter dans la file les sommet marquee
 
@@ -439,26 +427,19 @@ static void ajouterDsFilePrio (GrapheMat* graphe, Liste* file, int cout,int numS
 	strcpy(nouveau->chemin,chemin);
 	insererEnOrdre (file, nouveau);
 	//printf("%d",cout);
-<<<<<<< HEAD
+
 
 
 
 }
 /*void ExplorationUniforme (GrapheMat* graphe , int but)
-=======
-	
 
-
-}
-/*void ExplorationUniforme (GrapheMat* graphe , int but) 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 {
 	int nMax = graphe->nMax;
 	razMarque (graphe);
 	Liste* file = creerListe();
 	clock_t begin,end;
 	begin=clock();
-<<<<<<< HEAD
 	for (int i=0; i<graphe->n; i++)
 	{
 		if (!graphe->marque[i])
@@ -466,60 +447,34 @@ static void ajouterDsFilePrio (GrapheMat* graphe, Liste* file, int cout,int numS
 			//printf (" %s ", graphe->nomS [i]);
 			ajouterDsFilePrio (graphe, file, 0,i,"A",but);
 			while (!listeVide(file))
-=======
-	for (int i=0; i<graphe->n; i++) 
-	{
-		if (!graphe->marque[i]) 
-		{
-			//printf (" %s ", graphe->nomS [i]);
-			ajouterDsFilePrio (graphe, file, 0,i,"A",but);
-			while (!listeVide(file)) 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
+
 			{
 				Dounia* succes = (Dounia*) extraireEnTeteDeListe (file);
 				printf (" %s \n", (char*)graphe->nomS [succes->somSuc]);
 				//printf (" %d ", succes->cout);
-<<<<<<< HEAD
 
 				int s = succes->somSuc;
 				int precedent=succes->cout;
 				char * ch=succes->chemin;
 				for (int j=0; j<graphe->n; j++)
-=======
-				
-				int s = succes->somSuc;
-				int precedent=succes->cout;
-				char * ch=succes->chemin;
-				for (int j=0; j<graphe->n; j++) 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
+
 				{
 					Dounia* copyc = (Dounia*) malloc (sizeof (Dounia) );
 					copyc->cout=succes->cout;
 					strcpy(copyc->chemin,succes->chemin);
 					copyc->somSuc=succes->somSuc;
-<<<<<<< HEAD
 					if ( (graphe->element [s*nMax+j] == vrai) && !graphe->marque[j] )
 					{
 
 						ch = strcat(copyc->chemin,graphe->nomS[j]);
 						ajouterDsFilePrio (graphe, file,precedent+graphe->valeur [s*nMax+j],j,ch,but);
-
-=======
-					if ( (graphe->element [s*nMax+j] == vrai) && !graphe->marque[j] ) 
-					{
-					
-						ch = strcat(copyc->chemin,graphe->nomS[j]);
-						ajouterDsFilePrio (graphe, file,precedent+graphe->valeur [s*nMax+j],j,ch,but);
-						
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 					}
 				}
 				if(!strcmp( graphe->nomS[succes->somSuc],graphe->nomS[but]))
 				{
 					if(succes->cout!=0)
 					{
-<<<<<<< HEAD
-						printf("Chemin : %s  Cout :%d ",succes->chemin,succes->cout);
+		printf("Chemin : %s  Cout :%d ",succes->chemin,succes->cout);
 					}
 				}
 
@@ -527,25 +482,11 @@ static void ajouterDsFilePrio (GrapheMat* graphe, Liste* file, int cout,int numS
 
 		}
 	}
-=======
-						printf("Chemin : %s  Cout :%d ",succes->chemin,succes->cout);	
-					}	
-				}
-					
-			} 
-			
-		}
-	} 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 	end=clock();
 	//printf("%d ",graphe->valeur[graphe->nMax+5]);
 	time5= (double)(end-begin)/CLOCKS_PER_SEC;
 	printf("le temps CPU : %f10\n",time5);
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 }
 
 
@@ -567,21 +508,13 @@ int coutCircuit(GrapheMat* probleme,char* tour[N]){
 				tmp=tmp2;
 				tmp2=j;
 				tmp1=tmp;break;}}
-<<<<<<< HEAD
 		if(tmp1!=-1 && tmp2!=-1){
 			cout+= probleme->valeur[tmp1*n+tmp2];
 			}
 		}
 	return cout;
 
-=======
-		if(tmp1!=-1 && tmp2!=-1){	
-			cout+= probleme->valeur[tmp1*n+tmp2]; 
-			}
-		}
-	return cout;
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
+
 }
 /*int coutCircuit(GrapheMat* probleme,char* tour[N]){
 	int tourc[N], n= probleme->n, cout;
@@ -593,11 +526,6 @@ int coutCircuit(GrapheMat* probleme,char* tour[N]){
 		cout+= probleme->valeur[n*tourc[i-1]+tourc[i]];
 	}
 	return cout;
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 
 }*/
 // plus proche voisin avec les listes CA MARCHE!!
@@ -611,11 +539,6 @@ int coutCircuit(GrapheMat* probleme,char* tour[N]){
 		for( int i=0;i<n; i++){
 	if (probleme->element [i*probleme->nMax+j] == vrai)
 			if((valeur > probleme->valeur[k*nMax+i]) && !chercherUnObjetBis(li,probleme->nomS[i]) && (probleme->valeur[k*nMax+i]!= 0)){
-<<<<<<< HEAD
-
-=======
-				
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 				valeur = probleme->valeur[k*nMax+i];
 				j= i;
 			}
@@ -651,7 +574,6 @@ void ppv(GrapheMat* probleme, char* tour[N], int a ){
 		}
 		tour[k]= (char*)probleme->nomS[a];
 		l=a;
-<<<<<<< HEAD
 		valeur= INFINI;
 		}
 		tour[n]= sommetDebut;
@@ -660,16 +582,6 @@ void ppv(GrapheMat* probleme, char* tour[N], int a ){
 
 
 
-=======
-		valeur= INFINI;		
-		}
-		tour[n]= sommetDebut;
-		
-	}	
-
-	
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 
 //2opt v1 CA MARCHE !!
 void deuxOptv1(char* tour[N], int i , int j, char* retour[N]){
@@ -693,7 +605,7 @@ void deuxOptv1(char* tour[N], int i , int j, char* retour[N]){
 
 //2opt v2 CA MARCHE !!
 
-<<<<<<< HEAD
+
 void deuxOptv2(GrapheMat* probleme,char* z[N],int y){
 	int cout;
 	int nMax= probleme->n;
@@ -701,15 +613,6 @@ void deuxOptv2(GrapheMat* probleme,char* z[N],int y){
 	ppv(probleme,l,y);
 	cout=coutCircuit(probleme,l);
 	int i,j,cmp=0,k;
-=======
-void deuxOptv2(GrapheMat* probleme){
-	int* cout;
-	int nMax= probleme->n;
-	char* l[N] ,*retour[N];
-	ppv(probleme,l,0);
-	int i,j,cmp=0;
-	cout =0;
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 	for (i= 1; i<N-2;i++)
 		for (j=i+1;j<N-1;j++)
 			if(i!=1 || j!=N-2){
@@ -717,7 +620,6 @@ void deuxOptv2(GrapheMat* probleme){
 				printf("%d i= %d,j= %d- ",++cmp,i,j);
 				deuxOptv1(l,i,j,retour);
 				printf("	cout= %d", coutCircuit(probleme,retour));
-<<<<<<< HEAD
 				if(cout>coutCircuit(probleme,retour)){
 					cout=coutCircuit(probleme,retour);
 					for(k=0;k<N;k++){
@@ -726,22 +628,14 @@ void deuxOptv2(GrapheMat* probleme){
 				printf("\n");}
 			}
 
-=======
-				printf("\n");}
-			}
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
+
 }
 
 
 
 //escalade simple CA MAARCHE!!
 void escaladeS(GrapheMat* probleme){
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 	bool out= false;
 	int nMax= probleme->n;
 	char* l[N] ,*retour[N], *precedent[N];
@@ -757,11 +651,7 @@ void escaladeS(GrapheMat* probleme){
 				if( i<j){
 				deuxOptv1(l,i,j,retour);
 				if(coutCircuit(probleme,retour)>cout){
-<<<<<<< HEAD
 					printf("\n ******Le cout min = %d*****\n", cout);
-=======
-					printf("\n ******Le cout min = %d*****\n", cout); 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 					printf("le chemin avec le cout min \n");
 					for(int i=0; i<N; i++){
 						printf("'%s'", precedent[i]);
@@ -779,19 +669,11 @@ void escaladeS(GrapheMat* probleme){
 
 
 	}
-<<<<<<< HEAD
+
 
 	// escalade Complet
 
 	void escaladeC(GrapheMat* probleme){
-
-=======
-	
-	// escalade Complet 
-	
-	void escaladeC(GrapheMat* probleme){
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 	bool out= false;
 	int nMax= probleme->n;
 	char* l[N] ,*retour[N], *precedent[N];
@@ -808,11 +690,7 @@ void escaladeS(GrapheMat* probleme){
 					if( i<j){
 					deuxOptv1(l,i,j,retour);
 					if(coutCircuit(probleme,retour)>cout){
-<<<<<<< HEAD
 						printf("\n ******Le cout min = %d*****\n", cout);
-=======
-						printf("\n ******Le cout min = %d*****\n", cout); 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 						printf("le chemin avec le cout min \n");
 						for(int i=0; i<N; i++){
 							printf("'%s'", precedent[i]);
@@ -827,31 +705,13 @@ void escaladeS(GrapheMat* probleme){
 					}
 				}
 			if(out) break;}
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 
 	}
 }
 
 
 
-/*void randomTour(GrapheMat* probleme, char* tour[N]){
-	srand(time(NULL));
-	int r=rand()%7 ;
-	for(int i=0; i<N-1;i++){
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
-		while(find(tour, probleme->nomS[r])){ r = rand()%7;printf("%d",r);}
-		tour[i]= probleme->nomS[r];
-	}
-	tour[N-1]=tour[0];
-}*/
 //random circuit
 
 
@@ -869,7 +729,6 @@ void randomTour(GrapheMat* probleme, char* tour[N]){
 //tablea de rand integer
 void randomTou( int* tab){
 int i,x,k;
-<<<<<<< HEAD
 	for (i=0; i<(N-1); i++){
 
 		x=rand()%(N-1);
@@ -881,38 +740,15 @@ int i,x,k;
 
 				if ( x != tab[k]){
 
-=======
-	for (i=0; i<(N-1); i++){ 
- 
-		x=rand()%(N-1);
-		if (i < 1){
-			tab[i] = rand()%(N-1);
-		}	
-		else{	
-			for (k=0; k<i; k++) {	
- 
-				if ( x != tab[k]){
- 
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 				}
 				else{
 					x=rand()%(N-1);
 					k=-1;
-<<<<<<< HEAD
 
 				}
 			}
 		tab[i]=x;
 		}
-
-=======
- 
-				}	
-			} 
-		tab[i]=x;
-		}
-		
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 	}
 	tab[i]=tab[0];
 printf("\n");
@@ -921,7 +757,6 @@ printf("\n");
 
 
 
-<<<<<<< HEAD
 // ca marche
 void recuitS(GrapheMat* probleme){
 	int tempD=100, cout= INFINI,i,k,cmp=0;
@@ -965,51 +800,6 @@ void recuitS(GrapheMat* probleme){
 }
 
 //recuit simulé v1= avec 2opt simple !!! aléatoire ? ???
-=======
-
-void recuitS(GrapheMat* probleme){
-	bool reste= false;
-	float temp, tempD=100;
-	int nMax= probleme->n,a,  essais=100;
-	char* l[N] ,*retour[N], *precedent[N];
-	int cout=coutCircuit(probleme,retour);
-	while(temp>  0){
-	for(int d=0;d<essais;d++)
-	for(int k=0; k<N;k++){
-		randomTour(probleme,retour);
-		randomTour(probleme,l);
-		randomTour(probleme,precedent);
-		int i,j,cmp=0;
-
-				for (i= 1; i<N-2;i++){
-					for (j=i+1;j<N-1;j++)
-						if(i!=1 || j!=N-2){
-							if( i<j){
-								if(!reste)deuxOptv1(l,i,j,retour);
-								if(coutCircuit(probleme,retour)>cout){
-									a=1/ rand()%10;
-									if(a> exp((-coutCircuit(probleme,retour)+cout)/temp ) ){
-										reste= true;
-									}
-								}
-								else{
-									if(!reste){
-										cout=coutCircuit(probleme,retour);
-										deuxOptv1(l,i,j,precedent);
-										}
-								}
-							}
-						}
-				}
-
-	}
-	temp*=1/1.5;}
-	printf("%d",cout);
-	
-}
-
-
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
 
 
 
@@ -1146,22 +936,3 @@ void ppv( GrapheMat* probleme,char* li){
 
 
 
-
-=======
-				
-			}
-}
-			
-*/		
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
-
-
-
-
-<<<<<<< HEAD
-=======
-	
-		
-	
->>>>>>> f5e5ac748d0c93143ce8c1a9488f996d51e5f25d
